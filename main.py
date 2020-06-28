@@ -1,3 +1,5 @@
+# A Atividade Avaliativa é uma adaptação do Game “Corrida Matemática” https://github.com/leosilvaalves/JogoEducativo-Em-Python 
+
 import pygame
 from random import randint
 from pygame_functions import *
@@ -199,8 +201,8 @@ while(loop_jogo):
         tela.blit(lousa,(0,-10))
         botao_apres.desenhaBotao()
         tela.blit(professor[randint(0,1)],(515,234))
-        text=("Olá %s seja bem-vindo!<br>Eu sou o professor Sérgio e preciso da sua ajuda para resolver<br>alguns cálculos.No caminho de volta para a minha casa sempre<br>encontro alguns obstáculos no meio do caminho,portanto desta<br>vez preciso da sua ajuda para me livrar desses obstáculos e<br>acertar os números que correspondem as respostas corretas<br>dos cálculos informados.<br><br>Utilize as teclas direcionais ESQUERDA e DIREITA para<br>controlar o veículo."%(nome_jogador))
-        apresentacaoLabel=makeLabel(text,21,125,130,"white","Arial")
+        text=("Olá %s seja bem-vindo!<br>Eu sou o professor LUIZ RONALDO e preciso da sua ajuda <br>para resolver alguns cálculos. No caminho de volta para <br>a minha casa sempre encontro meu pesadelo, meu time <br>rival (GRÊMIO) no meio do caminho, portanto desta vez <br>preciso da sua ajuda para me livrar desses obstáculos e<br>acertar  os  números  que  correspondem  as  respostas<br>corretas dos cálculos informados.<br><br>Utilize as teclas direcionais ESQUERDA e DIREITA<br>para controlar o FUSCA VERMELHO."%(nome_jogador))
+        apresentacaoLabel=makeLabel(text,21,125,130,"white","calibri")
         showLabel(apresentacaoLabel)
         pygame.time.delay(200)
 
