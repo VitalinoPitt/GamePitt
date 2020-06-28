@@ -179,23 +179,39 @@ instrucoes=False
 partida=False
 apresentacao=True
 informa_nome=True
+informa_email=True
 gameover=False
 
 
 while(loop_jogo):
     while informa_nome:
         tela.blit(lousa,(0,0))
-        texto_n="Por gentileza digite o seu nome:"
+        texto_n="Digite o seu nome:"
         solicita_nome=makeLabel(texto_n,25,200,200,"white","comicsansms")
         showLabel(solicita_nome)
-        obter_nome=makeTextBox(316,250,165,2,"Informe o seu nome:",10,20)
+        obter_nome=makeTextBox(200,250,365,2,"Informe o seu nome:",10,20)
         showTextBox(obter_nome)
         nome_jogador=textBoxInput(obter_nome)
         if(nome_jogador!=" " or nome_jogador!=""):
             informa_nome=False
-
+    
     hideTextBox(obter_nome)
     hideLabel(solicita_nome)
+
+    while informa_email:
+        tela.blit(lousa,(0,0))
+        texto_n="Digite o seu email:"
+        solicita_email=makeLabel(texto_n,25,200,200,"white","comicsansms")
+        showLabel(solicita_email)
+        obter_email=makeTextBox(200,250,365,2,"Informe o seu email:",32,20)
+        showTextBox(obter_email)
+        email_jogador=textBoxInput(obter_email)
+        if(email_jogador!=" " or email_jogador!=""):
+            informa_email=False
+
+    hideTextBox(obter_email)
+    hideLabel(solicita_email)
+
 
     while(apresentacao):
         tela.blit(lousa,(0,-10))
