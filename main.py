@@ -80,7 +80,16 @@ def mostraPontuacao():
     tela.blit(exibe_p1,(288,230))
     tela.blit(exibe_p2,(288,260))
     tela.blit(exibe_p3,(288,290))
-    
+
+def salvarNomeEmail():
+    arq=open("dados.txt", "a")
+    arq.write("Nome: ")
+    arq.write(nome_jogador)
+    arq.write(" | Email: ")
+    arq.write(email_jogador)
+    arq.write("\n")
+    arq.close()
+
 pygame.init()
 
 largura=800
@@ -156,6 +165,7 @@ resultado=n1+n2
 texto_soma=("%i+%i = ?"%(n1,n2))
 pontos=0
 nome_jogador=" "
+email_jogador= " "
 fundo_py=0
 fundo2_py=-(fundo.get_height())
 vidas=3
@@ -194,7 +204,7 @@ while(loop_jogo):
         nome_jogador=textBoxInput(obter_nome)
         if(nome_jogador!=" " or nome_jogador!=""):
             informa_nome=False
-    
+
     hideTextBox(obter_nome)
     hideLabel(solicita_nome)
 
@@ -211,7 +221,6 @@ while(loop_jogo):
 
     hideTextBox(obter_email)
     hideLabel(solicita_email)
-
 
     while(apresentacao):
         tela.blit(lousa,(0,-10))
@@ -517,7 +526,9 @@ while(loop_jogo):
             exibe_fim2=texto2.render(("Jogador: "+nome_jogador+"          Pontos obtidos:"+str(pontos)),True,(233,233,233))
             tela.blit(exibe_fim1,(280,30))
             tela.blit(exibe_fim2,(196,120))
+            salvarNomeEmail()
             mostraPontuacao()
+
             botao_jogarNovamente.desenhaBotao()
             
             pygame.display.flip()
