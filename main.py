@@ -1,9 +1,6 @@
-# A Atividade Avaliativa é uma adaptação do Game “Corrida Matemática” https://github.com/leosilvaalves/JogoEducativo-Em-Python 
-
 import pygame
 from random import randint
 from pygame_functions import *
-
 
 class Botao:
     def __init__(self,cor,posx,posy,largura,altura,texto=""):
@@ -25,7 +22,6 @@ class Botao:
         fonte=pygame.font.SysFont('comicsansms', 20)
         texto_menu=fonte.render(self.texto,True,(BRANCO))
         tela.blit(texto_menu,(self.posx + (self.largura/2 - texto_menu.get_width()/2), self.posy + (self.altura/2 - texto_menu.get_height()/2)))
-
 
 def desenhaCarro(posx,posy):
     tela.blit(carro,(posx,posy))
@@ -107,7 +103,7 @@ VERDE_ESCURO2=(0,140,0)
 AZUL_CLARO=(123,104,238)
 AZUL_ESCURO=(0,0,128)
 BRANCO=(255,255,255)
-pygame.display.set_caption("Corrida Matemática")
+pygame.display.set_caption("Corrida Matemática do Fusca do Prof Luiz Ronaldo")
 
 # IMAGENS
 lousa=pygame.image.load("./imagens/lousa.jpg")
@@ -171,7 +167,6 @@ fundo2_py=-(fundo.get_height())
 vidas=3
 numero_errado=randint(0,19)
 
-
 #BOTÕES
 botao1_menu=Botao((VERDE_CLARO),300,200,200,50,"Jogar")
 botao3_menu=Botao((VERDE_CLARO),300,260,200,50,"Ligar som")
@@ -182,7 +177,6 @@ botao7_menu=Botao((VERDE_CLARO),300,320,200,50,"Dificuldade: Difícil")
 botao_apres=Botao((VERDE_CLARO),400,360,120,40,"Seguir >>")
 botao_jogarNovamente=Botao((VERDE),310,360,180,40,"Jogar novamente")
 
-
 loop_jogo=True
 menu=True
 instrucoes=False
@@ -191,7 +185,6 @@ apresentacao=True
 informa_nome=True
 informa_email=True
 gameover=False
-
 
 while(loop_jogo):
     while informa_nome:
@@ -221,6 +214,8 @@ while(loop_jogo):
 
     hideTextBox(obter_email)
     hideLabel(solicita_email)
+
+    salvarNomeEmail()
 
     while(apresentacao):
         tela.blit(lousa,(0,-10))
@@ -526,7 +521,6 @@ while(loop_jogo):
             exibe_fim2=texto2.render(("Jogador: "+nome_jogador+"          Pontos obtidos:"+str(pontos)),True,(233,233,233))
             tela.blit(exibe_fim1,(280,30))
             tela.blit(exibe_fim2,(196,120))
-            salvarNomeEmail()
             mostraPontuacao()
 
             botao_jogarNovamente.desenhaBotao()
